@@ -1,120 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/public/css/home.css" />
 
-    <link rel="stylesheet" href="/public/css/styles.css" />
-    <link rel="stylesheet" href="/public/css/nav.css" />
-    <!--google fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet"
-    />
-    <!-- favicon-->
-    <link rel="icon" href="/public/media/favicon.png" type="image/x-icon" />
-    <title>Home-SpaceAgriAdvisor</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/public/css/home.css" />
+  <link rel="stylesheet" href="/public/css/styles.css" />
+  <link rel="stylesheet" href="/public/css/nav.css" />
+  <!--google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet" />
+  <!-- favicon-->
+  <link rel="icon" href="/public/media/favicon.png" type="image/x-icon" />
+  <title>Home-SpaceAgriAdvisor</title>
+</head>
 
-  <body>
-    <!-- navigation bar-->
-    <nav class="navbar">
-      <div class="navbar-container">
-        <img
-          src="/public/media/favicon.png"
-          alt="SpaceAgriAdvisor"
-          class="logo"
-          height="30px"
-        />
+<body>
+  <!-- navigation bar-->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <img src="/public/media/favicon.png" alt="SpaceAgriAdvisor" class="logo" height="30px" />
 
-        <b
-          class="agriadvisor"
-          style="
+      <b class="agriadvisor" style="
             font-weight: 800;
             font-family: 'Open Sans', sans-serif;
             font-size: x-large;
-          "
-          >SpaceAgriAdvisor</b
-        >
+          ">SpaceAgriAdvisor</b>
 
-        <ul class="nav-links">
-          <u>
-            <li><a href="home.html">Home</a></li>
-          </u>
-          <li><a href="second.html">Map</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="feedback.html">Feedback</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <br />
-    <br />
-    <br />
-
-    <div>
-      <div class="carousel">
-        <div class="slide active">
-          <h2>Home</h2>
-          <p>
-            Welcome to our website! Discover amazing features and services
-            tailored just for you. Explore our user-friendly interface and find
-            everything you need in one place.
-          </p>
-          <a href="/public/html/home.html" class="btn">Learn More</a>
-        </div>
-        <div class="slide">
-          <h2>Map</h2>
-          <p>
-            Navigate through our interactive map to find locations, services,
-            and points of interest. Plan your route efficiently and discover new
-            places with ease.
-          </p>
-          <a href="/public/html/second.html" class="btn">View Map</a>
-        </div>
-        <div class="slide">
-          <h2>About</h2>
-          <p>
-            Learn about our mission, values, and the team behind our success.
-            Discover how we're making a difference and why we're passionate
-            about what we do.
-          </p>
-          <a href="/public/html/about.html" class="btn">About Us</a>
-        </div>
-        <div class="slide">
-          <h2>Feedback</h2>
-          <p>
-            Your opinion matters! Share your thoughts, suggestions, and
-            experiences with us. Help us improve and shape the future of our
-            services.
-          </p>
-          <a href="/public/html/contact.html" class="btn">Give Feedback</a>
-        </div>
-        <div class="nav-button prev">&lt;</div>
-        <div class="nav-button next">&gt;</div>
-      </div>
+      <ul class="nav-links">
+        <u>
+          <li><a href="home.html">Home</a></li>
+        </u>
+        <li><a href="second.html">Map</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
     </div>
-    <script>
-      const slides = document.querySelectorAll(".slide");
-      const prevButton = document.querySelector(".prev");
-      const nextButton = document.querySelector(".next");
-      let currentSlide = 0;
+  </nav>
 
-      function showSlide(n) {
-        slides[currentSlide].classList.remove("active");
-        currentSlide = (n + slides.length) % slides.length;
-        slides[currentSlide].classList.add("active");
-      }
+  <br />
+  <br />
+  <br />
+  <br />
 
-      prevButton.addEventListener("click", () => showSlide(currentSlide - 1));
-      nextButton.addEventListener("click", () => showSlide(currentSlide + 1));
+  <div>
+    <div class="carousel">
+      <div class="slide active">
+        <h2>Home</h2>
+        <p>
+          Welcome to our website! Discover amazing features and services
+          tailored just for you. We show suggestions to discover which kind of crops can be sown in the soil using
+          satellite data .
+        </p>
+        <!-- <a href="/public/html/home.html" class="btn">Learn More</a> -->
+      </div>
 
-      // Auto-rotate slides every 5 seconds
-      setInterval(() => showSlide(currentSlide + 1), 5000);
-    </script>
-    <script src="home.js"></script>
-  </body>
+      <div class="slide">
+        <h2>Map</h2>
+        <p>
+          Navigate through our interactive map to find locations and data regarding to which kind of crop grows
+          efficiently and would help in reducing losses as well as helps in gaining knowledge related to agriculture
+          with ease.
+        </p>
+        <!-- <a href="/public/html/second.html" class="btn">View Map</a> -->
+      </div>
+
+      <div class="slide">
+        <h2>About</h2>
+        <p>
+          Learn about our mission, values, and the team behind our success.
+          Discover how we're making a difference and why we're passionate
+          about what we do.
+        </p>
+        <!-- <a href="/public/html/about.html" class="btn">About Us</a> -->
+      </div>
+
+      <div class="slide">
+        <h2>Feedback</h2>
+        <p>
+          Your opinion matters! Share your thoughts, suggestions, and
+          experiences with us. Help us improve and shape the future of our
+          services.
+        </p>
+        <a href="/public/html/feedback.html" class="btn" onclick="redirectTo()" >Give Feedback</a>
+      </div>
+
+      <div class="nav-button prev">&lt;</div>
+      <div class="nav-button next">&gt;</div>
+    </div>
+  </div>
+
+
+  <script>
+
+    function redirectTo()
+    {
+
+    }
+
+    const carousel = document.querySelector('.carousel');
+    const slides = carousel.querySelectorAll('.slide');
+    const prevButton = carousel.querySelector('.prev');
+    const nextButton = carousel.querySelector('.next');
+    let currentSlide = 0;
+
+    function showSlide(n) {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (n + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    prevButton.addEventListener('click', prevSlide);
+    nextButton.addEventListener('click', nextSlide);
+
+
+
+
+    // const slides = document.querySelectorAll(".slide");
+    // const prevButton = document.querySelector(".prev");
+    // const nextButton = document.querySelector(".next");
+    // let currentSlide = 0;
+
+    // function showSlide(n) {
+    //   slides[currentSlide].classList.remove("active");
+    //   currentSlide = (n + slides.length) % slides.length;
+    //   slides[currentSlide].classList.add("active");
+    // }
+
+    // prevButton.addEventListener("click", () => showSlide(currentSlide - 1));
+    // nextButton.addEventListener("click", () => showSlide(currentSlide + 1));
+
+    // // Auto-rotate slides every 5 seconds
+    // //setInterval(() => showSlide(currentSlide + 1), 5000);
+  </script>
+  <script src="home.js"></script>
+</body>
+
 </html>
