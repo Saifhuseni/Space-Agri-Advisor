@@ -1,0 +1,50 @@
+.outer-body{
+    background-color: #f8feff;
+}
+#map {
+    height: 540px;
+    width: 50%;
+    border: 20px;
+    border-radius: 30px;
+    border-color: rgb(0, 0, 0);
+    border-width: 50px;
+}
+#hi{
+    height: 100px;
+    width: 50%;
+    justify-content: center;
+    border-left: 100px;
+    border-color: black;
+    margin-left: 50px;
+}
+.set{
+    padding: 95px;
+    justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+}
+.set1{
+    
+    justify-content: center;
+    display: flex;
+}
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(247, 240, 240);
+}
+
+h1 {
+    font-weight: 700;
+    /* Bold */
+}
+
+p {
+    font-weight: 400;
+    /* Regular */
+}
+
+em {
+    font-style: italic;
+}

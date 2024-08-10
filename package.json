@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "leaflet": "^1.9.4",
+    "node-fetch": "^3.3.2"
   }
 }
