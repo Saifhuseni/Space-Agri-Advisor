@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Space Agriculture Advisor</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/nav.css" />
+    <!-- Custom CSS (if any) -->
+    <style>
+        /* body {
+            font-family: Arial, sans-serif;
+            background-color: #f8feff;
+            color: #060606;
+        } */
+
+        .contact-section {
+            margin-top: 100px;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+        }
+
+        .contact-info h5 {
+            margin-bottom: 10px;
+        }
+
+        .contactform {
+            width: 60%;
+            padding: 40px;
+            background: #fff;
+        }
+
+        .contactform h2 {
+            font-size: 30;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .contactform .inputbox {
+            position: relative;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .contactform .inputbox input,
+        .contactform .inputbox textarea {
+            width: 100%;
+            padding: 5px 0;
+            font-size: 16px;
+            margin: 10px 0;
+            border: none;
+            border-bottom: 2px solid #333;
+            outline: none;
+            resize: none;
+        }
+
+        .contactform .inputbox span {
+            position: absolute;
+            left: 0;
+            padding: 5px 0;
+            font-size: 16px;
+            margin: 10px 0;
+            pointer-events: none;
+            transition: 0.5s;
+            color: #666;
+        }
+
+        .contactform .inputbox input:focus~span,
+        .contactform .inputbox input:valid~span,
+        .contactform .inputbox textarea:focus~span,
+        .contactform .inputbox textarea:valid~span {
+            color: #863be7;
+            font-size: 12px;
+            transform: translateY(-20px);
+        }
+
+        .contactform .inputbox input[type="submit"] {
+            width: 100px;
+            background: #863be7;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        .contact .social {
+            display: flex;
+            margin-right: 970px;
+
+        }
+
+        .contact .social li {
+            list-style: none;
+            padding: 10px;
+        }
+
+        .contact .social li a {
+            color: #fff;
+            font-size: 2em;
+            transition: all 500ms;
+
+        }
+
+        .contact .social li a:hover {
+            color: #fff;
+            font-size: 3em;
+            transition: 0.3s;
+            font-size-adjust: initial;
+        }
+
+        #map {
+            height: 300px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Contact Section -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <img src="/public/media/favicon.png" alt="SpaceAgriAdvisor" class="logo" height="30px" />
+
+            <b class="agriadvisor" style="
+              font-weight: 800;
+              font-family: 'Open Sans', sans-serif;
+              font-size: x-large;
+            ">SpaceAgriAdvisor</b>
+
+            <ul class="nav-links">
+
+                <li><a href="home.html">Home</a></li>
+
+                <li><a href="second.html">Map</a></li>
+                <li><a href="about.html">About</a></li>
+                <u>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </u>
+            </ul>
+        </div>
+    </nav>
+    <br />
+    <br />
+    <br />
+    <br />
+    <section class="contact-section">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Info -->
+                <div class="col-md-4 contact-info"
+                    style="background-color: #eeebf4; border: 5px;border-radius: 15px;color: #060606;">
+                    <h2 style="padding-top: 35px;">Contact Information</h2><br><br>
+                    <h5>Address:</h5>
+                    <p>123 Space Road, Astro City, Mars</p><br>
+                    <h5>Email:</h5>
+                    <p><a href="mailto:info@spaceagricultureadvisor.com">info@spaceagricultureadvisor.com</a></p><br>
+                    <h5>Phone:</h5>
+                    <p>+123 456 7890</p>
+                </div>
+
+
+                <div class="contactform">
+                    <form action="index.html">
+                        <h2>Send Message</h2>
+                        <div class="inputbox">
+                            <input type="text" name="" required="required"
+                                style="background-color: #eeeaf2;border-radius: 6px;">
+                            <span>Full Name</span>
+                        </div>
+                        <div class="inputbox">
+                            <input type="text" name="" required="required"
+                                style="background-color: #eeeaf2;border-radius: 6px;">
+                            <span>Email</span>
+                        </div>
+                        <div class="inputbox">
+                            <textarea required="required"
+                                style="background-color: #eeeaf2;border-radius: 6px;"></textarea>
+                            <span>Subject</span>
+                        </div>
+                        <div class="inputbox">
+                            <textarea required="required"
+                                style="background-color: #eeeaf2;border-radius: 6px;"></textarea>
+                            <span>Type Your Message</span>
+                        </div>
+                        <div class="inputbox">
+                            <input type="submit" value="send">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Bootstrap JS -->
+                <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script> -->
+
+                <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+                <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+
+</html>
