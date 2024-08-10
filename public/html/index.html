@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/home.css" />
+
+    <link rel="stylesheet" href="/public/css/styles.css" />
+    <link rel="stylesheet" href="/public/css/nav.css" />
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- favicon-->
+    <link rel="icon" href="/public/media/favicon.png" type="image/x-icon" />
+    <title>Home-SpaceAgriAdvisor</title>
+
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, sans-serif;
+        background-color: #f8feff;
+        color: #060606;
+      }
+
+      .carousel-container {
+        position: relative;
+        width: 100%;
+        height: calc(100vh - 60px); /* Adjust based on your navbar height */
+        overflow: hidden;
+      }
+
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        height: 100%;
+      }
+      .carousel-slide {
+        flex: 0 0 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      h2 {
+        font-size: 3.2rem;
+        color: #863be7;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 1.6rem;
+        max-width: 600px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        background-color: #863be7;
+        color: #f8feff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #6b2ec7;
+      }
+
+      .carousel-nav {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+      }
+
+      .carousel-indicator {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: #863be7;
+        opacity: 0.5;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+      }
+
+      .carousel-indicator.active {
+        opacity: 1;
+      }
+
+      .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(134, 59, 231, 0.7);
+        color: #f8feff;
+        padding: 10px 15px;
+        text-decoration: none;
+        font-size: 1.5rem;
+        border: none;
+        cursor: pointer;
+      }
+
+      .carousel-button-prev {
+        left: 20px;
+      }
+
+      .carousel-button-next {
+        right: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- navigation bar-->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <img
+          src="/public/media/favicon.png"
+          alt="SpaceAgriAdvisor"
+          class="logo"
+          height="30px"
+        />
+
+        <b
+          class="agriadvisor"
+          style="
+            font-weight: 800;
+            font-family: 'Open Sans', sans-serif;
+            font-size: x-large;
+          "
+          >SpaceAgriAdvisor</b
+        >
+
+        <ul class="nav-links">
+          <u>
+            <li><a href="index.html">Home</a></li>
+          </u>
+          <li><a href="second.html">Map</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <br />
+    <br />
+    <br />
+
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <h2>Home</h2>
+          <p>
+            Welcome to our website! Discover amazing features and services
+            tailored just for you. Explore our user-friendly interface and find
+            everything you need in one place.
+          </p>
+          <a href="index.html" class="btn">Learn More</a>
+        </div>
+        <div class="carousel-slide">
+          <h2>Map</h2>
+          <p>
+            Navigate through our interactive map to find locations, services,
+            and points of interest. Plan your route efficiently and discover new
+            places with ease.
+          </p>
+          <a href="second.html" class="btn">View Map</a>
+        </div>
+        <div class="carousel-slide">
+          <h2>About</h2>
+          <p>
+            Learn about our mission, values, and the team behind our success.
+            Discover how we're making a difference and why we're passionate
+            about what we do.
+          </p>
+          <a href="about.html" class="btn">About Us</a>
+        </div>
+        <div class="carousel-slide">
+          <h2>Feedback</h2>
+          <p>
+            Your opinion matters! Share your thoughts, suggestions, and
+            experiences with us. Help us improve and shape the future of our
+            services.
+          </p>
+          <a href="feedback.html" class="btn">Give Feedback</a>
+        </div>
+      </div>
+      <!-- <button class="carousel-button carousel-button-prev">&lt;</button>
+      <button class="carousel-button carousel-button-next">&gt;</button> -->
+      <div class="carousel-nav"></div>
+    </div>
+
+    <script>
+      const track = document.querySelector(".carousel-track");
+      const slides = Array.from(track.children);
+      const nextButton = document.querySelector(".carousel-button-next");
+      const prevButton = document.querySelector(".carousel-button-prev");
+      const nav = document.querySelector(".carousel-nav");
+      const slideWidth = slides[0].getBoundingClientRect().width;
+
+      // Arrange the slides next to one another
+      const setSlidePosition = (slide, index) => {
+        slide.style.left = slideWidth * index + "px";
+      };
+      slides.forEach(setSlidePosition);
+
+      const moveToSlide = (currentSlide, targetSlide) => {
+        track.style.transform = "translateX(-" + targetSlide.style.left + ")";
+        currentSlide.classList.remove("active");
+        targetSlide.classList.add("active");
+      };
+
+      // This function updates the active class for indicator dots
+      const updateIndicators = (currentIndicator, targetIndicator) => {
+        currentIndicator.classList.remove("active");
+        targetIndicator.classList.add("active");
+      };
+
+      // Create indicator dots
+      slides.forEach((_, index) => {
+        const indicator = document.createElement("div");
+        indicator.classList.add("carousel-indicator");
+        if (index === 0) indicator.classList.add("active");
+        nav.appendChild(indicator);
+
+        indicator.addEventListener("click", () => {
+          const currentSlide = track.querySelector(".active");
+          const targetSlide = slides[index];
+          const currentIndicator = nav.querySelector(".active");
+          moveToSlide(currentSlide, targetSlide);
+          // This line updates the active indicator when clicked
+          updateIndicators(currentIndicator, indicator);
+        });
+      });
+
+      // Ensure the first slide is active initially
+      slides[0].classList.add("active");
+
+      // Next button
+      nextButton.addEventListener("click", () => {
+        const currentSlide = track.querySelector(".active");
+        const nextSlide = currentSlide.nextElementSibling || slides[0];
+        const currentIndicator = nav.querySelector(".active");
+        const nextIndicator =
+          currentIndicator.nextElementSibling || nav.firstElementChild;
+
+        moveToSlide(currentSlide, nextSlide);
+        // This line updates the active indicator when the next button is clicked
+        updateIndicators(currentIndicator, nextIndicator);
+      });
+
+      // Previous button
+      prevButton.addEventListener("click", () => {
+        const currentSlide = track.querySelector(".active");
+        const prevSlide =
+          currentSlide.previousElementSibling || slides[slides.length - 1];
+        const currentIndicator = nav.querySelector(".active");
+        const prevIndicator =
+          currentIndicator.previousElementSibling || nav.lastElementChild;
+
+        moveToSlide(currentSlide, prevSlide);
+        // This line updates the active indicator when the previous button is clicked
+        updateIndicators(currentIndicator, prevIndicator);
+      });
+
+      // Auto-rotate slides every 5 seconds
+      setInterval(() => {
+        nextButton.click();
+      }, 5000);
+    </script>
+  </body>
+</html>
