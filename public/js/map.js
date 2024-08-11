@@ -51,30 +51,3 @@ var map = L.map('map').setView([22.53285370752713, 79.01367187500001], 5);
 
 
 
-
-
-
-
-function getCityState(lat, lng) {
-            const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=10&addressdetails=1`;
-         
-            fetch(url)
-              .then(response => response.json())
-              .then(data => {
-                console.log(data);  // Log the entire response to inspect it
-         
-                // Extract city and state
-                const city = data.address.city || data.address.town || data.address.village;
-                const state = data.address.state;
-         
-                if (city && state) {
-                  // Display city and state in the HTML
-                  document.getElementById('city').innerText = city;
-                  document.getElementById('state').innerText = state;
-                } else {
-                  console.error('City or State not found in the response');
-                }
-              })
-              .catch(error => console.error('Error:', error));
-          }
-
