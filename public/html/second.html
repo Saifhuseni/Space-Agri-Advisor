@@ -1,64 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Map Page</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet"
-    />
-    <!-- favicon-->
-    <link rel="icon" href="/public/media/favicon.png" type="image/x-icon" />
 
-    <link rel="stylesheet" href="/public/css/styles.css" />
-    <link rel="stylesheet" href="/public/css/nav.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Map Page</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
-  <body class="outer-body">
-    <nav class="navbar">
-      <div class="navbar-container">
-        <img
-          src="/public/media/favicon.png"
-          alt="SpaceAgriAdvisor"
-          class="logo"
-          height="30px"
-        />
 
-        <b
-          class="agriadvisor"
-          style="
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet" />
+  <!-- favicon-->
+  <link rel="icon" href="/public/media/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <link rel="stylesheet" href="/public/css/styles.css" />
+  <link rel="stylesheet" href="/public/css/nav.css" />
+</head>
+
+
+<body class="outer-body">
+  <nav class="navbar">
+    <div class="navbar-container">
+      <img src="/public/media/favicon.png" alt="SpaceAgriAdvisor" class="logo" height="30px" />
+
+
+      <b class="agriadvisor" style="
             font-weight: 800;
             font-family: 'Open Sans', sans-serif;
             font-size: x-large;
-          "
-          >SpaceAgriAdvisor</b
-        >
+          ">SpaceAgriAdvisor</b>
 
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
 
-          <u>
-            <li><a href="second.html">Map</a></li>
-          </u>
-          <li><a href="about.html">About</a></li>
-          <li><a href="feedback.html">Feedback</a></li>
-        </ul>
-      </div>
-    </nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
 
-    <br />
-    <div class="set">
-      <div id="map"></div>
-      <div class="set1">
-        <p id="hi"></p>
-      </div>
+
+        <u>
+          <li><a href="second.html">Map</a></li>
+        </u>
+        <li><a href="about.html">About</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
     </div>
-  </body>
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="/public/js/map.js"></script>
+  </nav>
+
+
+  <br />
+  <div class="set">
+    <div id="map"></div>
+
+
+    <div class="set3">
+      <center>
+        <i class="fa fa-map-marker" style="font-size:36px; padding-right: 75px;"></i>
+        <h1 style="color: black; padding-right: 80px;">Choose your location</h1><br><br>
+      </center>
+
+
+      <div class="set4">
+        <p id="hi">This is what you chosen : </p>
+      </div>
+      <b>Latitude is</b> <p id="p1"> </p>
+      <b>Latitude is</b><p id="p2"> </p>
+    </div>
+
+
+  </div>
+</body>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="/public/js/map.js"></script>
+
+
 </html>

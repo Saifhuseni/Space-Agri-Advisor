@@ -110,6 +110,7 @@ app.get('/fetch-data', async (req, res) => {
             }
         } else {
             console.log('Location is water, no soil data available.');
+            
             res.write("<h1>Invalid location selected. Suspected to be a water body.</h1>");
         }
     } catch (error) {
