@@ -79,7 +79,7 @@ app.get('/fetch-data', async (req, res) => {
         const options = {
             method: 'GET',
             headers: {
-                'x-rapidapi-key': '6fbc9f0d2bmsh07f4deb3961e08bp148e41jsn460d4d2ce469',
+                'x-rapidapi-key': '8f247f29a9mshcc62da477bc1604p151e01jsn195be6d27678',
                 'x-rapidapi-host': 'isitwater-com.p.rapidapi.com'
             }
         };
@@ -194,46 +194,109 @@ const findRecommendedCrops = async (soilData) => {
     }
 };
 
-// Generate HTML response
 function generateHTMLResponse(cropData) {
-    const { recommendedCrops, nonRecommendedCrops } = cropData;
+  const { recommendedCrops, nonRecommendedCrops } = cropData;
 
-    let recommendedHTML = '<div><h2>Recommended Crops</h2>';
-    recommendedHTML += '<ul>';
-    recommendedCrops.forEach(crop => {
-        recommendedHTML += `<li>${crop.crop} - ${crop.matchType}</li>`;
-    });
-    recommendedHTML += '</ul></div>';
+  let recommendedHTML = '<div class="crop-list"><h2>Recommended Crops</h2>';
+  recommendedHTML += '<ul>';
+  recommendedCrops.forEach(crop => {
+      recommendedHTML += `<li class="crop-item">${crop.crop} - <strong>${crop.matchType}</strong></li>`;
+  });
+  recommendedHTML += '</ul></div>';
 
-    let nonRecommendedHTML = '<div><h2>Non-Recommended Crops</h2>';
-    nonRecommendedHTML += '<ul>';
-    nonRecommendedCrops.forEach(crop => {
-        nonRecommendedHTML += `<li>${crop.crop}</li>`;
-    });
-    nonRecommendedHTML += '</ul></div>';
+  let nonRecommendedHTML = '<div class="crop-list"><h2>Non-Recommended Crops</h2>';
+  nonRecommendedHTML += '<ul>';
+  nonRecommendedCrops.forEach(crop => {
+      nonRecommendedHTML += `<li class="crop-item">${crop.crop}</li>`;
+  });
+  nonRecommendedHTML += '</ul></div>';
 
-    return `
-        <html>
-            <head>
-                <title>Crop Recommendation</title>
-                <style>
-                    body { font-family: Arial, sans-serif; margin: 20px; }
-                    h2 { color: #4CAF50; }
-                    ul { list-style-type: none; padding: 0; }
-                    li { padding: 5px 0; }
-                    .recommended, .non-recommended { margin-bottom: 20px; }
-                </style>
-            </head>
-            <body>
-                <div class="recommended">
-                    ${recommendedHTML}
-                </div>
-                <div class="non-recommended">
-                    ${nonRecommendedHTML}
-                </div>
-            </body>
-        </html>
-    `;
+  return `
+      <!DOCTYPE html>
+      <html>
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Crop Recommendation</title>
+              <style>
+                  body { 
+                      font-family: 'Arial', sans-serif; 
+                      margin: 0; 
+                      padding: 0; 
+                      background-color: #f0f0f0; 
+                      color: #333; 
+                  }
+                  .container { 
+                      width: 80%; 
+                      max-width: 1200px; 
+                      margin: 20px auto; 
+                      padding: 20px; 
+                      background-color: #ffffff; 
+                      border-radius: 8px; 
+                      box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+                      overflow: hidden; 
+                  }
+                  h2 { 
+                      color: #6a1b9a; 
+                      border-bottom: 3px solid #6a1b9a; 
+                      padding-bottom: 10px; 
+                      margin-bottom: 20px; 
+                      font-size: 1.8rem; 
+                      font-weight: bold; 
+                  }
+                  ul { 
+                      list-style-type: none; 
+                      padding: 0; 
+                  }
+                  li { 
+                      padding: 10px 0; 
+                      border-bottom: 1px solid #ddd; 
+                      font-size: 1.1rem; 
+                  }
+                  li:last-child { 
+                      border-bottom: none; 
+                  }
+                  .crop-item { 
+                      color: #4a148c; 
+                  }
+                  .crop-item strong { 
+                      color: #d500f9; 
+                  }
+                  .crop-section { 
+                      margin-bottom: 20px; 
+                  }
+                  .container::before {
+                      content: '';
+                      display: block;
+                      width: 50px;
+                      height: 5px;
+                      background-color: #6a1b9a;
+                      margin-bottom: 20px;
+                  }
+                  .grid-container {
+                      display: grid;
+                      grid-template-columns: 1fr 1fr;
+                      gap: 20px;
+                  }
+                  .crop-list {
+                      background-color: #ffffff;
+                      border: 1px solid #ddd;
+                      border-radius: 8px;
+                      padding: 15px;
+                      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                  }
+              </style>
+          </head>
+          <body>
+              <div class="container">
+                  <div class="grid-container">
+                      ${recommendedHTML}
+                      ${nonRecommendedHTML}
+                  </div>
+              </div>
+          </body>
+      </html>
+  `;
 }
 
 app.listen(PORT, () => {
